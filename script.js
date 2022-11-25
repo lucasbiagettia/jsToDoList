@@ -23,6 +23,12 @@ const btn = document.querySelector('[data-form-btn]');
         task.classList.add('card');
         input.value = '';
         const taskContent = document.createElement('div');
+        const taskObject = {
+            value,
+            dateFormat,
+        }
+
+        sessionStorage.setItem("tasks", JSON.stringify(taskObject));
         taskContent.appendChild(checkComplete());
         const titleTask = document.createElement('span');
         titleTask.classList.add('task');
