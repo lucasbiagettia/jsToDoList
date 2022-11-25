@@ -1,10 +1,21 @@
 import { createTask } from "./addTask.js";
+import dateElement from './dateElement.js';
+import { uniqueDate } from "../services/date.js";
 
-export const readTasks = () =>{
+export const displayTasks = () =>{
     const list = document.querySelector ('[data-list]');
     const taskList =JSON.parse(localStorage.getItem('tasks')) || [];
-    taskList.forEach((task) =>{
-        list.appendChild(createTask(task));
-    });
+    const dates = uniqueDate(taskList);
 
-}
+    dates.forEach((date)=> {
+        const dateMoment = moment(date, 'DD/MM/AAAA');
+        list.appendChild(dateElement(date))
+        taskList.forEach((task) =>{
+            const taskDate = moment(task.dateFormat, 'DD/MM/AAAA');
+            const diff = dateMoment.diff(taskDate);
+            if (diff == 0){
+                list.appendChild(createTask(task));
+            }
+        });
+    });
+};
