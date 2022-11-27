@@ -4,14 +4,14 @@ import { uniqueDate , orderDates} from "../services/date.js";
 
 export const displayTasks = () =>{
     const list = document.querySelector ('[data-list]');
-    const taskList =JSON.parse(localStorage.getItem('tasks')) || [];
-    const dates = uniqueDate(taskList);
+    const tasksList =JSON.parse(localStorage.getItem('tasks')) || [];
+    const dates = uniqueDate(tasksList);
     orderDates(dates);
 
     dates.forEach((date)=> {
         const dateMoment = moment(date, 'DD/MM/AAAA');
         list.appendChild(dateElement(date))
-        taskList.forEach((task) =>{
+        tasksList.forEach((task) =>{
             const taskDate = moment(task.dateFormat, 'DD/MM/AAAA');
             const diff = dateMoment.diff(taskDate);
             if (diff == 0){
