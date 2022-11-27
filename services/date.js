@@ -7,3 +7,12 @@ export const uniqueDate = (tasks) =>{
     });
     return unique;
 }
+
+export const orderDates = (dates) => {
+    return dates.sort((a, b) => {
+        const firstDate = moment(a, "DD/MM/YYYY");
+        const secondDate = moment(a, "DD/MM/YYYY");
+        return firstDate - secondDate;
+
+    });
+}
