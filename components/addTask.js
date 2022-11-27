@@ -1,5 +1,5 @@
 import checkComplete from './checkComplete.js';
-import deleteIcon from './deleteTask.js';
+import deleteIcon from './deleteIcon.js';
 import { displayTasks } from './readTasks.js';
 
 
@@ -62,4 +62,5 @@ export const createTask = ({value, dateFormat, complete, id}) => {
     task.appendChild(deleteIcon(id));
     return task;
 };
+
 
