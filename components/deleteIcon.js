@@ -9,7 +9,7 @@ const deleteIcon = (id) =>{
 
 const deleteTask = (id) => {
     const li = document.querySelector('[data-list]');
-    JSON.parese(localStorage.getItem('tasks'));
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
     const index = tasks.findIndex((item) => item.id == id);
     tasks.splice(index,1);
     li.innerHTML = '';
