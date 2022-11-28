@@ -6,8 +6,8 @@ import { displayTasks } from './readTasks.js';
 export const addTask = (event) => {
     event.preventDefault();
     const list = document.querySelector('[data-list]');
-    const input = document.querySelector ('[data-form-input');
-    const calendar = document.querySelector( '[data-form-date]');
+    const input = document.querySelector('[data-form-input]');
+    const calendar = document.querySelector('[data-form-date]');
     const value = input.value;
     const date = calendar.value;
     const dateFormat = moment(date).format('DD/MM/YYYY');
