@@ -1,5 +1,5 @@
 const checkComplete = (id) => {
-    const i = document.createElement("i");
+    const i = document.createElement('i');
     i.classList.add('far','fa-check-square','icon');
     i.addEventListener('click', (event) => completeTask (event, id) )
     return i;
