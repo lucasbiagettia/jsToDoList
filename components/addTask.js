@@ -10,7 +10,7 @@ export const addTask = (event) => {
     const calendar = document.querySelector( '[data-form-date]');
     const value = input.value;
     const date = calendar.value;
-    const dateFormat = moment(date).format("DD/MM/YYYY");
+    const dateFormat = moment(date).format('DD/MM/YYYY');
     if (value == '' || date == ''){
         return;
     }
