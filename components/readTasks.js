@@ -9,10 +9,10 @@ export const displayTasks = () =>{
     orderDates(dates);
 
     dates.forEach((date)=> {
-        const dateMoment = moment(date, 'DD/MM/AAAA');
+        const dateMoment = moment(date, 'DD/MM/YYYY');
         list.appendChild(dateElement(date))
         tasksList.forEach((task) =>{
-            const taskDate = moment(task.dateFormat, 'DD/MM/AAAA');
+            const taskDate = moment(task.dateFormat, 'DD/MM/YYYY');
             const diff = dateMoment.diff(taskDate);
             if (diff == 0){
                 list.appendChild(createTask(task));
