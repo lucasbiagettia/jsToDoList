@@ -36,27 +36,51 @@ export const addTask = (event) => {
 
 
 
-export const createTask = ({value, dateFormat, complete, id}) => {
+// export const createTask = ({value, dateFormat, complete, id}) => {
+//     const task = document.createElement('li');
+//     task.classList.add('card');
+    
+//     const taskContent = document.createElement('div');
+//     const check = checkComplete(id);
+//     if (complete){
+//         check.classList.toggle('fas');
+//         check.classList.toggle('completeIcon');
+//         check.classList.toggle('far');
+
+//     }
+//     const titleTask = document.createElement('span');
+//     titleTask.classList.add('task');
+//     titleTask.innerText = value;
+//     taskContent.appendChild(check);
+//     taskContent.appendChild(titleTask);
+
+//     task.appendChild(taskContent);
+//     task.appendChild(deleteIcon(id));
+//     return task;
+// };
+
+export const createTask = ({ value, dateFormat, complete, id }) => {
     const task = document.createElement('li');
     task.classList.add('card');
-    
+  
     const taskContent = document.createElement('div');
+  
     const check = checkComplete(id);
-    if (complete){
-        check.classList.toggle('fas');
-        check.classList.toggle('completeIcon');
-        check.classList.toggle('far');
-
+  
+    if (complete) {
+      check.classList.toggle('fas');
+      check.classList.toggle('completeIcon');
+      check.classList.toggle('far');
     }
     const titleTask = document.createElement('span');
     titleTask.classList.add('task');
     titleTask.innerText = value;
     taskContent.appendChild(check);
     taskContent.appendChild(titleTask);
-
+  
     task.appendChild(taskContent);
     task.appendChild(deleteIcon(id));
     return task;
-};
+  };
 
 
