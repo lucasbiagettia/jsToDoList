@@ -5,3 +5,6 @@ The scope of this repository is to study JavaScript
 - HTML
 - CSS
 - JavaScript
+- LocalStorage
+
+## 
